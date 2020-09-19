@@ -1,0 +1,13 @@
+<h3 >Todo Details</h3>
+<button type="button" class="btn btn-info mb-3" [routerLink]="['/','todos']">Back to Todos</button>
+<div *ngIf="todo; then hasData else noData"></div>
+
+<ng-template #hasData>
+  <div class="card-body">
+  <h5  class="card-title" >{{todo.title}}</h5>
+  <h6 class="card-subtitle mb-2 text-muted">{{todo.userName}}</h6>
+  <p class="card-text">{{todo.description}}</p>
+</div>
+</ng-template>
+
+<ng-template #noData>No data.</ng-template>
